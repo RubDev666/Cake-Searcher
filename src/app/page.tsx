@@ -4,12 +4,11 @@ import { useEffect, useState } from "react";
 
 import { ApiModel, FilterOptions } from "@/utils/db";
 import { Spinner } from "@nextui-org/react";
+
+//to animate elements as they disappear from the DOM
 import { AnimatePresence } from "framer-motion";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFaceAngry } from '@fortawesome/free-solid-svg-icons';
-
-import { FiltersModal, Gallery, Header, Initial, ImgModal } from "@/components";
+import { FiltersModal, Gallery, Header, Initial, ModalContainer, ErrorMessage } from "@/components";
 
 export default function Home() {
     const [cakes, setCakes] = useState<ApiModel[]>([]);
@@ -19,6 +18,7 @@ export default function Home() {
     const [selectedCategory, setCategory] = useState('');
     const [filterOptions, setFilters] = useState<FilterOptions | null>(null);
     const [imgSelected, setImg] = useState<ApiModel | null>(null);
+    const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
         const bod = document.querySelector('BODY') as HTMLBodyElement;
@@ -33,8 +33,14 @@ export default function Home() {
     const backToInit = () => {
         setOpen(false);
         setGallery(false);
+        setErrorMessage('');
         setImg(null);
         setCakes([]);
+    }
+
+    const btnToggleFilters = () => {
+        setImg(null);
+        setOpen(!openFilters);
     }
 
     if (loading) return (
@@ -47,23 +53,32 @@ export default function Home() {
         <>
             {showGallery && (
                 <>
-                    <Header backToInit={backToInit} setOpen={setOpen} openFilters={openFilters} />
+                    <Header backToInit={backToInit} btnToggleFilters={btnToggleFilters} />
 
                     {<Gallery selectedCategory={selectedCategory} cakes={cakes} setImg={setImg} />}
 
-                    <AnimatePresence>
-                        {(openFilters && filterOptions) && <FiltersModal filterOptions={filterOptions} selectedCategory={selectedCategory} setCakes={setCakes} setOpen={setOpen} />}
-
-                        {imgSelected && <ImgModal imgSelected={imgSelected} setImg={setImg} />}
-                    </AnimatePresence>
-
-                    {(selectedCategory !== '' && cakes.length === 0) && (
-                        <div className="text-center">
-                            <p className="text-color-1 text-2xl p-4">No hay resultados relacionados, intenta reajustar los filtros para esta categoria</p>
-
-                            <FontAwesomeIcon icon={faFaceAngry} className="text-color-1 m-auto text-9xl" />
-                        </div>
+                    {(openFilters && filterOptions) && (
+                        <ModalContainer
+                            closeModal={() => setOpen(false)}
+                        >
+                            <FiltersModal
+                                filterOptions={filterOptions} 
+                                selectedCategory={selectedCategory} 
+                                setCakes={setCakes} setOpen={setOpen} 
+                                setErrorMessage={setErrorMessage} 
+                            />
+                        </ModalContainer>
                     )}
+
+                    {imgSelected && (
+                        <ModalContainer
+                            closeModal={() => setImg(null)}
+                        >
+                            <img src={imgSelected.urlImg} alt={imgSelected.category} className='w-[auto] h-[auto] max-h-[70vh] mt-10 mx-auto' />
+                        </ModalContainer>
+                    )}
+
+                    {errorMessage !== '' && <ErrorMessage message={errorMessage} />}
                 </>
             )}
 

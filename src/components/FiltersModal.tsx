@@ -5,19 +5,24 @@ import { useEffect, useState } from "react";
 import { FilterModalProps } from "@/types/props";
 import { FiltersState } from "@/types/globals";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-
 import { RadioGroup, Radio, Select, SelectItem } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { ApiModel } from "@/utils/db";
 
-export default function FiltersModal({ filterOptions, selectedCategory, setCakes, setOpen}: FilterModalProps) {
-    const [filters, setFilters] = useState<FiltersState>({theme: '', shape: '', tier: '', decorated: new Set([])});
+const itemFilter = {
+    hidden: { y: 40, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1
+    }
+};
+
+export default function FiltersModal({ filterOptions, selectedCategory, setCakes, setOpen, setErrorMessage }: FilterModalProps) {
+    const [filters, setFilters] = useState<FiltersState>({ theme: '', shape: '', tier: '', decorated: new Set([]) });
     const [btnFilter, setBtnFilter] = useState(false);
 
     useEffect(() => {
-        if(filters.theme !== '' || filters.tier !== '' || filters.shape !== '' || Array.from(filters.decorated).length > 0) {
+        if (filters.theme !== '' || filters.tier !== '' || filters.shape !== '' || Array.from(filters.decorated).length > 0) {
             setBtnFilter(true);
         } else {
             setBtnFilter(false);
@@ -32,22 +37,22 @@ export default function FiltersModal({ filterOptions, selectedCategory, setCakes
     }
 
     const getF = async () => {
-        const {theme, tier, shape, decorated} = filters;
+        const { theme, tier, shape, decorated } = filters;
         const decoratedSelected = Array.from(decorated);
 
         setCakes([]);
 
         let query = '';
-        
-        if(theme !== '') query = query + `&theme=${theme}`;
-        if(shape !== '') query = query + `&shape=${shape}`;
-        if(tier !== '') query = query + `&tier=${tier}`;
 
-        if(decoratedSelected.length > 0) {
+        if (theme !== '') query = query + `&theme=${theme}`;
+        if (shape !== '') query = query + `&shape=${shape}`;
+        if (tier !== '') query = query + `&tier=${tier}`;
+
+        if (decoratedSelected.length > 0) {
             let decoratedQuery = '&decorated=';
 
-            for(let i = 0; i < decoratedSelected.length; i++) {
-                if(i === 0) {
+            for (let i = 0; i < decoratedSelected.length; i++) {
+                if (i === 0) {
                     decoratedQuery = decoratedQuery + decoratedSelected[i];
                 } else {
                     decoratedQuery = decoratedQuery + '-' + decoratedSelected[i];
@@ -60,8 +65,13 @@ export default function FiltersModal({ filterOptions, selectedCategory, setCakes
         try {
             const res: ApiModel[] = await fetch(`/api/cakes?category=${selectedCategory}${query}`).then(res => res.json());
 
-            setOpen(false);
+            if (res.length > 0) {
+                setErrorMessage('');
+            } else {
+                setErrorMessage('No hay resultados relacionados, intenta reajustar los filtros para esta categoria');
+            }
 
+            setOpen(false);
             setCakes(res);
         } catch (error) {
             console.log(error);
@@ -69,19 +79,13 @@ export default function FiltersModal({ filterOptions, selectedCategory, setCakes
     }
 
     return (
-        <motion.div
-            className="custom-container-2 p-4 custom-modal fixed top-[56px] outline-none border-none w-full overflow-y-auto"
-            //onClick={() => setActive(false)}
-            initial={{ opacity: 1, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1 }}
-        >
-            <FontAwesomeIcon icon={faXmark} className="text-color-1 text-3xl absolute right-4" onClick={() => setOpen(false)} />
+        <div className="py-4 max-w-[640px] m-auto">
+            <h3 className="text-lg font-medium mb-3 text-color-1 text-center">Filtrar por:</h3>
 
-            <div className="py-4 max-w-[640px] m-auto">
-                <h3 className="text-lg font-medium mb-3 text-color-1 text-center">Filtrar por:</h3>
-
-                {filterOptions.THEME.length > 0 && (
+            {filterOptions.THEME.length > 0 && (
+                <motion.div
+                    variants={itemFilter}
+                >
                     <Select
                         label="Tematica"
                         className="w-full text-3xl"
@@ -95,9 +99,13 @@ export default function FiltersModal({ filterOptions, selectedCategory, setCakes
                             </SelectItem>
                         ))}
                     </Select>
-                )}
+                </motion.div>
+            )}
 
-                {filterOptions.SHAPE.length === 2 && (
+            {filterOptions.SHAPE.length === 2 && (
+                <motion.div
+                    variants={itemFilter}
+                >
                     <RadioGroup
                         label="Forma:"
                         orientation="horizontal"
@@ -109,9 +117,13 @@ export default function FiltersModal({ filterOptions, selectedCategory, setCakes
                             <Radio key={shape} value={shape}>{shape}</Radio>
                         ))}
                     </RadioGroup>
-                )}
+                </motion.div>
+            )}
 
-                {filterOptions.TIER.length > 1 && (
+            {filterOptions.TIER.length > 1 && (
+                <motion.div
+                    variants={itemFilter}
+                >
                     <RadioGroup
                         label="Pisos:"
                         orientation="horizontal"
@@ -123,8 +135,12 @@ export default function FiltersModal({ filterOptions, selectedCategory, setCakes
                             <Radio key={tier} value={tier.toString()}>{tier.toString() + `${tier === 1 ? ' Piso' : ' Pisos'}`} </Radio>
                         ))}
                     </RadioGroup>
-                )}
+                </motion.div>
+            )}
 
+            <motion.div
+                variants={itemFilter}
+            >
                 <div className="bg-color-1 w-full mt-5 p-0 flex flex-col flex-wrap ax-w-[300px] ">
                     <Select
                         label="Decorado con:"
@@ -146,8 +162,9 @@ export default function FiltersModal({ filterOptions, selectedCategory, setCakes
                     </div>
                 </div>
 
-                {btnFilter && <button className="bg-color-4 text-color-1 p-2 text-2xl w-full mt-5 tracking-widest" onClick={getF}>Filtrar</button>}
-            </div>
-        </motion.div>
+            </motion.div>
+
+            {btnFilter && <button className="bg-color-4 text-color-1 p-2 text-2xl w-full mt-5 tracking-widest" onClick={getF}>Filtrar</button>}
+        </div>
     )
 }
