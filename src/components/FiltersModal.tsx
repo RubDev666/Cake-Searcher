@@ -7,7 +7,7 @@ import { FiltersState } from "@/types/globals";
 
 import { RadioGroup, Radio, Select, SelectItem } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import { ApiModel } from "@/utils/db";
+import { ApiModel } from "@/types/api";
 
 const itemFilter = {
     hidden: { y: 40, opacity: 0 },

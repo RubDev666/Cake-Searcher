@@ -1,12 +1,14 @@
 import { NextRequest } from "next/server";
 
-import { ApiModel, db, Decorated, GETCategory } from "@/utils/db";
-import { GETfilterOptions } from "@/types/globals";
+import { db } from "@/utils/db";
+import { ApiModel, Decorated } from "@/types/api";
+import { GETfilterOptions, GETCategory } from "@/types/globals";
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
 
     const category = searchParams.get('category');
+    let CAKES = db.filter((cake) => cake.category === category);
 
     const getFilterOptions: GETfilterOptions = {
         theme: searchParams.get('theme'),
@@ -14,8 +16,6 @@ export async function GET(request: NextRequest) {
         tier: searchParams.get('tier'),
         decorated: searchParams.get('decorated')
     };
-
-    let CAKES = db.filter((cake) => cake.category === category);
 
     const isFilter: Set<null | string> = new Set(Object.values(getFilterOptions));
     

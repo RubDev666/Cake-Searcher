@@ -1,6 +1,7 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
-import { ApiModel, FilterOptions } from '@/utils/db';
+import { ApiModel } from './api';
+import { FilterOptions } from './globals';
 
 export type InitialProps = {
     setCakes: Dispatch<SetStateAction<ApiModel[]>>;

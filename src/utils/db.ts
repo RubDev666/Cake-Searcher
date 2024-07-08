@@ -1,36 +1,4 @@
-type Categories = 'Bodas' | 'XV años' | 'Niños' | 'Niñas' | 'Deportes' | 'Series' | 'Animes' | 'Caricaturas' | 'Peliculas' | 'Artistas/Famosos' | 'Musica/Banda' | 'Adultos' | 'Videojuegos' | 'Youtubers/Influencers' | 'TikTok' | 'Dia de las madres' | 'Unicornios' | 'Profesiones' | 'Animales' | 'Flores';
-
-export type Decorated = 'fondant' | 'Oblea / Opalina' | 'Normal / Chantilly' | 'frutas' | 'dulces' | 'chocolate' | 'chispas de colores' | 'chispas de chocolate' | 'fudge' | 'dedicatorias' | 'flores naturales' | 'perlitas' | 'chispas';
-
-export type ApiModel = {
-    id: number;
-    category: Categories;
-    theme: string | null;
-    shape: 'redondo' | 'cuadrado';
-    tier: number;
-    decorated: Decorated[];
-    tags: string[];
-    urlImg: string;
-}
-
-export type FilterOptions = {
-    //themes: (string | null)[];
-    THEME: string[];
-    SHAPE: string[];
-    TIER: number[];
-    DECORATED: Decorated[];
-}
-
-export type GETCategory = {
-    cakes: ApiModel[];
-    filterOptions: FilterOptions;
-}
-
-export const categories: Categories[] = [
-    'Animales',
-    'Artistas/Famosos',
-    'Flores',
-];
+import { ApiModel } from "@/types/api";
 
 export const db: ApiModel[] = [
     { 
@@ -39,8 +7,8 @@ export const db: ApiModel[] = [
         theme: 'Patos',
         shape: 'cuadrado',
         tier: 1,
-        decorated: ['Normal / Chantilly', 'Oblea / Opalina', 'fondant'],
-        tags: ['patos', 'pato', 'patitos'],  
+        decorated: ['Normal/Chantilly', 'Oblea/Opalina', 'Fondant'],
+        references: ['patos', 'pato', 'patitos'],  
         urlImg: '/cakes/IMG_20230126_072251.jpg'
     },
     { 
@@ -49,8 +17,8 @@ export const db: ApiModel[] = [
         theme: 'Vacas',
         shape: 'cuadrado',
         tier: 1,
-        decorated: ['Normal / Chantilly', 'Oblea / Opalina'],
-        tags: ['vaca', 'vaquita', 'vacas'],  
+        decorated: ['Normal/Chantilly', 'Oblea/Opalina'],
+        references: ['vaca', 'vaquita', 'vacas'],  
         urlImg: '/cakes/IMG_20221003_174345.jpg'
     },
     {
@@ -59,8 +27,8 @@ export const db: ApiModel[] = [
         theme: null,
         shape: 'cuadrado',
         tier: 1,
-        decorated: ['dedicatorias', 'perlitas', 'Normal / Chantilly'],
-        tags: ['flor', 'flores', 'rosa'],  
+        decorated: ['Dedicatorias', 'Perlitas', 'Normal/Chantilly'],
+        references: ['flor', 'flores', 'rosa'],  
         urlImg: '/cakes/IMG_20211127_164425.jpg'
     },
     {
@@ -69,8 +37,8 @@ export const db: ApiModel[] = [
         theme: null,
         shape: 'cuadrado',
         tier: 1,
-        decorated: ['flores naturales', 'fondant', 'dedicatorias', 'chispas'],
-        tags: ['flor', 'flores', 'rosa'],  
+        decorated: ['Flores naturales', 'Fondant', 'Dedicatorias', 'Chispas'],
+        references: ['flor', 'flores', 'rosa'],  
         urlImg: '/cakes/IMG_20200913_085202.jpg'
     },
     {
@@ -79,8 +47,8 @@ export const db: ApiModel[] = [
         theme: 'michael jackson',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant', 'Oblea / Opalina', 'perlitas'],
-        tags: ['musica', 'michael', 'jackson', 'pop'],
+        decorated: ['Fondant', 'Oblea/Opalina', 'Perlitas'],
+        references: ['musica', 'michael', 'jackson', 'pop'],
         urlImg: '/cakes/IMG_20211121_123624.jpg'
     },
     {
@@ -89,8 +57,8 @@ export const db: ApiModel[] = [
         theme: 'bts',
         shape: 'redondo',
         tier: 2,
-        decorated: ['fondant', 'Oblea / Opalina'],
-        tags: ['bts', 'coreanos', 'k-pop', 'k pop'],
+        decorated: ['Fondant', 'Oblea/Opalina'],
+        references: ['bts', 'coreanos', 'k-pop', 'k pop'],
         urlImg: '/cakes/IMG_20211016_122357.jpg'
     },
     { 
@@ -99,8 +67,8 @@ export const db: ApiModel[] = [
         theme: 'Perros',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant', 'Oblea / Opalina'],
-        tags: ['perros', 'perritos'],  
+        decorated: ['Fondant', 'Oblea/Opalina'],
+        references: ['perros', 'perritos'],  
         urlImg: '/cakes/IMG_20210613_104853.jpg'
     },
     { 
@@ -109,8 +77,8 @@ export const db: ApiModel[] = [
         theme: 'Perros',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant'],
-        tags: ['perro', 'perrito'],  
+        decorated: ['Fondant'],
+        references: ['perro', 'perrito'],  
         urlImg: '/cakes/IMG_20201115_144247.jpg'
     },
     { 
@@ -119,8 +87,8 @@ export const db: ApiModel[] = [
         theme: 'Flamencos',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant', 'perlitas'],
-        tags: ['flamenco', 'flamencos'],  
+        decorated: ['Fondant', 'Perlitas'],
+        references: ['flamenco', 'flamencos'],  
         urlImg: '/cakes/IMG_20201107_162631.jpg'
     },
     {
@@ -129,8 +97,8 @@ export const db: ApiModel[] = [
         theme: 'marshmello',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant'],
-        tags: ['dj', 'electronica', 'mashmello'],
+        decorated: ['Fondant'],
+        references: ['dj', 'electronica', 'mashmello'],
         urlImg: '/cakes/IMG_20201102_115741.jpg'
     },
     {
@@ -139,8 +107,8 @@ export const db: ApiModel[] = [
         theme: null,
         shape: 'redondo',
         tier: 1,
-        decorated: ['Normal / Chantilly'],
-        tags: ['flor', 'flores'],  
+        decorated: ['Normal/Chantilly'],
+        references: ['flor', 'flores'],  
         urlImg: '/cakes/IMG_20201023_100444.jpg'
     },
     {
@@ -149,8 +117,8 @@ export const db: ApiModel[] = [
         theme: 'one direction',
         shape: 'redondo',
         tier: 1,
-        decorated: ['Oblea / Opalina', 'fondant'],
-        tags: ['one direction', 'harry', 'grupo', 'boy band'],
+        decorated: ['Oblea/Opalina', 'Fondant'],
+        references: ['one direction', 'harry', 'grupo', 'boy band'],
         urlImg: '/cakes/IMG_20201007_100123.jpg'
     },
     { 
@@ -159,8 +127,8 @@ export const db: ApiModel[] = [
         theme: 'gatos',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant'],
-        tags: ['gato', 'gatitos', 'figuras', 'gato negro'],  
+        decorated: ['Fondant'],
+        references: ['gato', 'gatitos', 'figuras', 'gato negro'],  
         urlImg: '/cakes/IMG_20200806_150540.jpg'
     },
     { 
@@ -169,8 +137,8 @@ export const db: ApiModel[] = [
         theme: 'Flamencos',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant', 'perlitas'],
-        tags: ['flamenco', 'flamencos'],  
+        decorated: ['Fondant', 'Perlitas'],
+        references: ['flamenco', 'flamencos'],  
         urlImg: '/cakes/IMG_20200802_151428.jpg'
     },
     { 
@@ -179,8 +147,8 @@ export const db: ApiModel[] = [
         theme: 'Perros',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant'],
-        tags: ['perro', 'perrito'],  
+        decorated: ['Fondant'],
+        references: ['perro', 'perrito'],  
         urlImg: '/cakes/IMG_20200721_151621.jpg'
     },
     {
@@ -189,8 +157,8 @@ export const db: ApiModel[] = [
         theme: null,
         shape: 'redondo',
         tier: 1,
-        decorated: ['Normal / Chantilly'],
-        tags: ['flor', 'flores'],  
+        decorated: ['Normal/Chantilly'],
+        references: ['flor', 'flores'],  
         urlImg: '/cakes/IMG_20200609_100234.jpg'
     },
     { 
@@ -199,8 +167,8 @@ export const db: ApiModel[] = [
         theme: 'Mariposas',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant', 'Oblea / Opalina', 'perlitas'],
-        tags: ['mariposas', 'mariposa'],  
+        decorated: ['Fondant', 'Oblea/Opalina', 'Perlitas'],
+        references: ['mariposas', 'mariposa'],  
         urlImg: '/cakes/20231125_182245.jpg'
     },
     { 
@@ -209,8 +177,8 @@ export const db: ApiModel[] = [
         theme: 'Conejos',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant'],
-        tags: ['conejo', 'figura de conejo', 'figura conejo'],  
+        decorated: ['Fondant'],
+        references: ['conejo', 'figura de conejo', 'figura conejo'],  
         urlImg: '/cakes/20231118_150809.jpg'
     },
     {
@@ -219,8 +187,8 @@ export const db: ApiModel[] = [
         theme: 'kiss',
         shape: 'redondo',
         tier: 1,
-        decorated: ['Oblea / Opalina', 'fondant'],
-        tags: ['rock', 'banda', 'kiss', 'banda de rock'],
+        decorated: ['Oblea/Opalina', 'Fondant'],
+        references: ['rock', 'banda', 'kiss', 'banda de rock'],
         urlImg: '/cakes/20231021_121350.jpg'
     },
     {
@@ -229,8 +197,8 @@ export const db: ApiModel[] = [
         theme: null,
         shape: 'redondo',
         tier: 3,
-        decorated: ['fondant', 'Oblea / Opalina'],
-        tags: ['flor', 'flores', 'tres pisos'],  
+        decorated: ['Fondant', 'Oblea/Opalina'],
+        references: ['flor', 'flores', 'tres pisos'],  
         urlImg: '/cakes/20220806_162346.jpg'
     },
     {
@@ -239,8 +207,8 @@ export const db: ApiModel[] = [
         theme: null,
         shape: 'redondo',
         tier: 2,
-        decorated: ['fondant', 'perlitas'],
-        tags: ['flor', 'flores', 'dos pisos'],  
+        decorated: ['Fondant', 'Perlitas'],
+        references: ['flor', 'flores', 'dos pisos'],  
         urlImg: '/cakes/20220730_125110.jpg'
     },
     {
@@ -249,8 +217,8 @@ export const db: ApiModel[] = [
         theme: 'bts',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant', 'Oblea / Opalina'],
-        tags: ['bts', 'coreanos', 'k-pop', 'k pop'],
+        decorated: ['Fondant', 'Oblea/Opalina'],
+        references: ['bts', 'coreanos', 'k-pop', 'k pop'],
         urlImg: '/cakes/20220619_122116.jpg'
     },
     {
@@ -259,8 +227,8 @@ export const db: ApiModel[] = [
         theme: null,
         shape: 'redondo',
         tier: 1,
-        decorated: ['flores naturales', 'perlitas'],
-        tags: ['flor natural', 'flores naturales', 'flor', 'flores'],  
+        decorated: ['Flores naturales', 'Perlitas'],
+        references: ['flor natural', 'flores naturales', 'flor', 'flores'],  
         urlImg: '/cakes/20220527_124514.jpg'
     },
     { 
@@ -269,8 +237,8 @@ export const db: ApiModel[] = [
         theme: 'gatos',
         shape: 'redondo',
         tier: 1,
-        decorated: ['fondant'],
-        tags: ['gato', 'gatitos', 'figuras'],  
+        decorated: ['Fondant'],
+        references: ['gato', 'gatitos', 'figuras'],  
         urlImg: '/cakes/20220522_113019.jpg'
     },
     {
@@ -279,8 +247,8 @@ export const db: ApiModel[] = [
         theme: 'bts',
         shape: 'redondo',
         tier: 1,
-        decorated: ['Oblea / Opalina', 'fondant'],
-        tags: ['bts', 'coreanos', 'k-pop', 'k pop'],
+        decorated: ['Oblea/Opalina', 'Fondant'],
+        references: ['bts', 'coreanos', 'k-pop', 'k pop'],
         urlImg: '/cakes/20220603_120652.jpg'
     }
 ]

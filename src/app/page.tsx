@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import { ApiModel, FilterOptions } from "@/utils/db";
+import { ApiModel } from "@/types/api";
+import { FilterOptions } from "@/types/globals";
+
 import { Spinner } from "@nextui-org/react";
 
 //to animate elements as they disappear from the DOM

@@ -8,8 +8,8 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
 import { Select, SelectItem } from "@nextui-org/react";
 
-import { ApiModel, categories, GETCategory } from '@/utils/db';
-
+import { getAllCategories } from '@/utils/functions';
+import { GETCategory } from '@/types/globals';
 import { InitialProps } from '@/types/props';
 
 const container = {
@@ -35,6 +35,8 @@ const item = {
 export default function Initial({setCakes, setLoading, setCategory, setFilters, setGallery}: InitialProps) {
     const inputSearch = useRef<HTMLInputElement>(null);
     const [selectCurrent, setValue] = useState('');
+
+    const categories = getAllCategories();
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
