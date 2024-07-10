@@ -1,6 +1,96 @@
 import { ApiModel } from "@/types/api";
 
 export const db: ApiModel[] = [
+    {  
+        id: 69,
+        category: 'Niñas',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: [ 'Fondant', 'Chispas de colores', 'Perlitas'],
+        references: ['niña', 'niñas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720621418/Cakes%20searcher/ni%C3%B1as/xc42cykldo7szo1cs7ep.webp'
+    },
+    { 
+        id: 68,
+        category: 'Dia de las madres',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Dedicatorias', 'Normal/Chantilly'],
+        references: ['madres', 'madre', 'mama', 'mamas', 'mamitas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720620943/Cakes%20searcher/dia%20de%20las%20madres/ribyigqtmhqkz09qasbd.webp'
+    },
+    {  
+        id: 67,
+        category: 'Niñas',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Dulces', 'Dedicatorias', 'Normal/Chantilly', 'Chispas de colores'],
+        references: ['niña', 'niñas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720620720/Cakes%20searcher/ni%C3%B1as/n5bgm7wjvq1een9coby8.webp'
+    },
+    { 
+        id: 66,
+        category: 'Niñas',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Perlitas', 'Dulces', 'Dedicatorias', 'Normal/Chantilly', 'Chispas de colores'],
+        references: ['niña', 'niñas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720620592/Cakes%20searcher/ni%C3%B1as/ae8x3esnpz8ufhg8ogqt.webp'
+    },
+    { 
+        id: 65,
+        category: 'Niñas',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Fondant'],
+        references: ['niña', 'niñas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720620491/Cakes%20searcher/ni%C3%B1as/sb1xyoefbiardxdszant.webp'
+    },
+    { 
+        id: 64,
+        category: 'Chocolate',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Fresas', 'Nuez'],
+        references: ['chocolate', 'chocolates', 'nuez', 'fresas', 'nueces'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720562695/Cakes%20searcher/chocolate/wksgrtmeya7ljpfdspss.webp'
+    },
+    { 
+        id: 63,
+        category: 'Chocolate',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Dedicatorias', 'Dulces de chocolate', 'Fresas'],
+        references: ['chocolate', 'chocolates', 'dulces', 'fresas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720562695/Cakes%20searcher/chocolate/rf0dq0tnxgydyn466t9z.webp'
+    },
+    { 
+        id: 62,
+        category: 'Chocolate',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Nuez', 'Dedicatorias'],
+        references: ['chocolate', 'chocolates', 'nuez', 'nueces'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720562695/Cakes%20searcher/chocolate/vip1tkkoohq8w6xmkpfr.webp'
+    },
+    { 
+        id: 61,
+        category: 'Chocolate',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Chispas de chocolate', 'Dulces de chocolate'],
+        references: ['chocolate', 'chocolates', 'hersheys'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720562694/Cakes%20searcher/chocolate/f63jcucgfhqilfjxkltt.webp'
+    },
     { 
         id: 60,
         category: 'Chocolate',
