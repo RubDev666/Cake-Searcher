@@ -2,6 +2,216 @@ import { ApiModel } from "@/types/api";
 
 export const db: ApiModel[] = [
     {  
+        id: 90,
+        category: 'Niñas',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Perlitas', 'Chispas de colores', 'Dedicatorias'],
+        references: ['niña', 'niñas', 'payasita', 'payasos'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720705099/Cakes%20searcher/ni%C3%B1as/aeymbpslt36ye2sf2kjx.webp'
+    },
+    {  
+        id: 89,
+        category: 'Dia de las madres',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Perlitas', 'Normal/Chantilly'],
+        references: ['flores', 'flor', 'felicidades', 'madres', 'madre', 'mama', 'mamas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704971/Cakes%20searcher/dia%20de%20las%20madres/e4hp3xlemarriuwlcarw.webp'
+    },
+    {  
+        id: 88,
+        category: 'Dia de las madres',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Perlitas', 'Normal/Chantilly'],
+        references: ['flores', 'flor', 'felicidades', 'madres', 'madre', 'mama', 'mamas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704918/Cakes%20searcher/dia%20de%20las%20madres/oglngfsgvgsg9qpt4xx2.webp'
+    },
+    {  
+        id: 87,
+        category: 'Dia de las madres',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Perlitas', 'Normal/Chantilly'],
+        references: ['flores', 'flor', 'felicidades', 'madres', 'madre', 'mama', 'mamas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704866/Cakes%20searcher/dia%20de%20las%20madres/kdo4idhzfrnbnkg9pkt9.webp'
+    },
+    {  
+        id: 86,
+        category: 'Dia de las madres',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Perlitas', 'Normal/Chantilly'],
+        references: ['flores', 'flor', 'felicidades', 'madres', 'madre', 'mama', 'mamas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704816/Cakes%20searcher/dia%20de%20las%20madres/af2lr1scl5cshtaw0mpw.webp'
+    },
+    {  
+        id: 85,
+        category: 'Dia de las madres',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Perlitas', 'Normal/Chantilly'],
+        references: ['flores', 'flor', 'felicidades', 'madres', 'madre', 'mama', 'mamas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704769/Cakes%20searcher/dia%20de%20las%20madres/sl1jjzmbji6fkeycibt2.webp'
+    },
+    {  
+        id: 84,
+        category: 'Dia de las madres',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Perlitas', 'Normal/Chantilly'],
+        references: ['flores', 'flor', 'felicidades', 'madres', 'madre', 'mama', 'mamas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704685/Cakes%20searcher/dia%20de%20las%20madres/d1zu64jsye9mn2ao5laf.webp'
+    },
+    {  
+        id: 83,
+        category: 'Cumpleaños',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Perlitas', 'Normal/Chantilly'],
+        references: ['flores', 'flor', 'felicidades'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704589/Cakes%20searcher/cumplea%C3%B1os/urdqx0vjjaxtsanwa32i.webp'
+    },
+    {  
+        id: 82,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Fondant', 'Perlitas'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704433/Cakes%20searcher/flores/umzqrbcr6lppqmiftaue.webp'
+    },
+    {  
+        id: 81,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Normal/Chantilly', 'Dedicatorias', 'Perlitas'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704364/Cakes%20searcher/flores/lvylrrisjgohkcwhxpdu.webp'
+    },
+    {  
+        id: 80,
+        category: 'Flores',
+        theme: null,
+        shape: 'cuadrado',
+        tier: 1,
+        decorated: ['Normal/Chantilly', 'Dedicatorias'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704229/Cakes%20searcher/flores/e1n3rg2qnul8e10cuxan.webp'
+    },
+    {  
+        id: 79,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Normal/Chantilly'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704171/Cakes%20searcher/flores/wnfvcjohaas9vuoijznf.webp'
+    },
+    {  
+        id: 78,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Perlitas', 'Normal/Chantilly', 'Dedicatorias'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704097/Cakes%20searcher/flores/nc6tm3sgqjogs6r8noz5.webp'
+    },
+    {  
+        id: 77,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Perlitas', 'Chispas de colores', 'Flores naturales'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720704027/Cakes%20searcher/flores/sii0sn2gq9bnh2rwg02t.webp'
+    },
+    {  
+        id: 76,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Perlitas', 'Normal/Chantilly', 'Dedicatorias'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720703968/Cakes%20searcher/flores/xlw3ikmoqgscogcnv5nk.webp'
+    },
+    {  
+        id: 75,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Perlitas', 'Fondant', 'Normal/Chantilly', 'Dedicatorias'],
+        references: ['flores', 'flor'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720703802/Cakes%20searcher/flores/uofmmh9xy9appu4eouc7.webp'
+    },
+    {  
+        id: 74,
+        category: 'Animales',
+        theme: 'Mariposas',
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina', 'Fondant'],
+        references: ['flores', 'flor', 'mariposa', 'mariposas', 'animales'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720703578/Cakes%20searcher/animales/mxzp3kzjae8mgxy6i5cd.webp'
+    },
+    {  
+        id: 73,
+        category:'Dia de las madres',
+        theme: null,
+        shape: 'corazon',
+        tier: 1,
+        decorated: ['Normal/Chantilly', 'Dedicatorias'],
+        references: ['cumpleaños', 'dedicatorias', 'feliz', 'felicidades', 'mama', 'mamas', 'madres', 'madre', 'mamis'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720702754/Cakes%20searcher/dia%20de%20las%20madres/ugbj8qy1hp6cyvofpnzl.webp'
+    },
+    {  
+        id: 72,
+        category:'Cumpleaños',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Chispas de colores', 'Normal/Chantilly', 'Dedicatorias'],
+        references: ['cumpleaños', 'dedicatorias', 'feliz', 'felicidades'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720702618/Cakes%20searcher/cumplea%C3%B1os/c10ll01v5usxqhtkuors.webp'
+    },
+    {  
+        id: 71,
+        category:'Cumpleaños',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Perlitas', 'Normal/Chantilly', 'Dedicatorias'],
+        references: ['cumpleaños', 'dedicatorias', 'feliz', 'felicidades'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720702096/Cakes%20searcher/cumplea%C3%B1os/pbtfppaxon1vebrk8lyv.webp'
+    },
+    {  
+        id: 70,
+        category:'Cumpleaños',
+        theme: null,
+        shape: 'cuadrado',
+        tier: 1,
+        decorated: [ 'Fondant', 'Chispas de colores', 'Perlitas', 'Normal/Chantilly', 'Dedicatorias'],
+        references: ['cumpleaños', 'dedicatorias', 'feliz', 'felicidades'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720701783/Cakes%20searcher/cumplea%C3%B1os/bwfir4vahtt3wx1qdn8h.webp'
+    },
+    {  
         id: 69,
         category: 'Niñas',
         theme: null,

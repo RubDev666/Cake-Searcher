@@ -6,7 +6,7 @@ export type ApiModel = {
     id: number;
     category: Categories;
     theme: string | null;
-    shape: 'redondo' | 'cuadrado';
+    shape: 'redondo' | 'cuadrado' | 'corazon';
     tier: number;
     decorated: Decorated[];
     references: string[];
