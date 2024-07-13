@@ -2,6 +2,126 @@ import { ApiModel } from "@/types/api";
 
 export const db: ApiModel[] = [
     {  
+        id: 102,
+        category: 'Caricaturas',
+        theme: 'Masha and the Bear',
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Dedicatorias', 'Oblea/Opalina', 'Perlitas', 'Fondant'],
+        references: ['niño', 'niños', 'niñas', 'niña', 'masha', 'bear', 'oso'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720879722/Cakes%20searcher/caricaturas/anfao6w1xhbidcoxz7u3.webp'
+    },
+    {  
+        id: 101,
+        category: 'Niños',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Dedicatorias', 'Oblea/Opalina'],
+        references: ['niño', 'niños', 'carros', 'carro', 'hot', 'wheels'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720879588/Cakes%20searcher/ni%C3%B1os/i0o0xorkrhyg1vktlvuk.webp'
+    },
+    {  
+        id: 100,
+        category: 'Disney',
+        theme: 'Frozen',
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Dedicatorias', 'Perlitas', 'Fondant'],
+        references: ['frozen', 'olaf', 'niñas', 'niña'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720879416/Cakes%20searcher/disney/y6em4rwy48j8wp1eonqs.webp'
+    },
+    {  
+        id: 99,
+        category: 'Niñas',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Dedicatorias', 'Perlitas', 'Fondant'],
+        references: ['sirena', 'sirenas', 'mar', 'playa', 'niñas', 'niña'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720879295/Cakes%20searcher/ni%C3%B1as/geu9uq614xhagnt7ne63.webp'
+    },
+    {  
+        id: 98,
+        category: 'Memes',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Normal/Chantilly', 'Dedicatorias'],
+        references: ['meme', 'memes'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720879245/Cakes%20searcher/memes/ivtwyaeyeqmnqz63fkvo.webp'
+    },
+    {  
+        id: 97,
+        category: 'Memes',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Normal/Chantilly', 'Dedicatorias'],
+        references: ['meme', 'memes'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720879166/Cakes%20searcher/memes/suzetdax1ewlr9xunlc5.webp'
+    },
+    {  
+        id: 96,
+        category: 'Futbol',
+        theme: 'Necaxa',
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Normal/Chantilly', 'Dedicatorias'],
+        references: ['necaxa', 'futbol', 'soccer', 'deportes'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720879036/Cakes%20searcher/futbol/o77poslvxpwo5p0xb0ii.webp'
+    },
+    {  
+        id: 95,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Fondant', 'Perlitas', 'Dedicatorias'],
+        references: ['flor', 'flores'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720878899/Cakes%20searcher/flores/bdwlvrg9c5merltkaigq.webp'
+    },
+    {  
+        id: 94,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Fondant'],
+        references: ['flor', 'flores'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720878841/Cakes%20searcher/flores/xfq9qjm7r2hb9wcdaky4.webp'
+    },
+    {  
+        id: 93,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Fondant'],
+        references: ['flor', 'flores'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720878743/Cakes%20searcher/flores/qj2xsqrnbnpgjseugkzq.webp'
+    },
+    {  
+        id: 92,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Oblea/Opalina'],
+        references: ['flor', 'flores'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720878655/Cakes%20searcher/flores/fvnjxjbtzo3sjldskdzq.webp'
+    },
+    {  
+        id: 91,
+        category: 'Flores',
+        theme: null,
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Perlitas', 'Fondant'],
+        references: ['flor', 'flores'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1720878530/Cakes%20searcher/flores/acpupsaofjddtfq6sovt.webp'
+    },
+    {  
         id: 90,
         category: 'Niñas',
         theme: null,
