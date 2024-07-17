@@ -2,6 +2,86 @@ import { ApiModel } from "@/types/api";
 
 export const db: ApiModel[] = [
     {  
+        id: 110,
+        category: 'Disney',
+        theme: 'Aladdine',
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Fondant', 'Oblea/Opalina'],
+        references: ['niñas', 'niña', 'jasmine', 'aladdine', 'castillo'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721225822/Cakes%20searcher/disney/vpdihvhautzg0fgho0xu.webp'
+    },
+    {  
+        id: 109,
+        category: 'Caricaturas',
+        theme: 'Pocoyo',
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Fondant', 'Chispas de colores', 'Normal/Chantilly'],
+        references: ['niños', 'niño', 'pocoyo'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721225223/Cakes%20searcher/caricaturas/pjtaqukjjpgbybws5wkt.webp'
+    },
+    {  
+        id: 108,
+        category: 'Caricaturas',
+        theme: 'Paw Patrol',
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Fondant', 'Oblea/Opalina'],
+        references: ['niños', 'niño', 'paw', 'patrol', 'cachorros', 'patrulla'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721224913/Cakes%20searcher/ni%C3%B1os/o1rlesqamalgx4sofyrq.webp'
+    },
+    {  
+        id: 107,
+        category: 'Niños',
+        theme: null,
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Fondant'],
+        references: ['niños', 'niño', 'elefante', 'bebes', 'bebe'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721224913/Cakes%20searcher/ni%C3%B1os/o1rlesqamalgx4sofyrq.webp'
+    },
+    {  
+        id: 106,
+        category: 'Animales',
+        theme: 'Vacas',
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Fondant'],
+        references: ['niñas', 'niña', 'vaca', 'vacas', 'vaquitas'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721224361/Cakes%20searcher/animales/iczkafvgz0w3tcy4fzsi.webp'
+    },
+    {  
+        id: 105,
+        category: 'Peliculas',
+        theme: 'Jurassic Park',
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Fondant', 'Oblea/Opalina'],
+        references: ['niños', 'niño', 'dinosaurio', 'jurassic', 'park', 'dinosaurios', 'world'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721224139/Cakes%20searcher/peliculas/exglghitnwexj9usq4nb.webp'
+    },
+    {  
+        id: 104,
+        category: 'Niñas',
+        theme: null,
+        shape: 'redondo',
+        tier: 2,
+        decorated: ['Fondant', 'Perlitas', ],
+        references: ['niñas', 'niña', 'mar', 'sirena', 'sirenita', 'playa', 'corales'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721222662/Cakes%20searcher/ni%C3%B1as/lf0whn637a4os6q3u18d.webp'
+    },
+    {  
+        id: 103,
+        category: 'Caricaturas',
+        theme: 'Masha and the Bear',
+        shape: 'redondo',
+        tier: 1,
+        decorated: ['Dedicatorias', 'Oblea/Opalina', 'Fondant'],
+        references: ['niño', 'niños', 'niñas', 'niña', 'masha', 'bear', 'oso'],  
+        urlImg: 'https://res.cloudinary.com/ddj3gsspy/image/upload/v1721222359/Cakes%20searcher/caricaturas/gl8za2fnzbp8n7dkji9p.webp'
+    },
+    {  
         id: 102,
         category: 'Caricaturas',
         theme: 'Masha and the Bear',
